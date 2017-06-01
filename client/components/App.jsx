@@ -1,6 +1,7 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
 
+//that's a lot of components, instead of one component per chapter I would suggest just having a single chapter component which you pass different props to
 import Header from './Header'
 import ErrorMessage from './ErrorMessage'
 import Form from './Form'
@@ -17,6 +18,7 @@ import MaskChapOne from './mask/MaskChapOne'
 class App extends React.Component {
   constructor(props) {
     super(props)
+    //an initial state this large should be extracted somewhere else and imported
     this.state = {
       error: null,
       user: "",
@@ -57,6 +59,7 @@ class App extends React.Component {
   }
 
   render() {
+    //remember to clean up your console.logs
     console.log("props in app now is: ", this.state.user);
     return (
       <Router>
@@ -73,6 +76,11 @@ class App extends React.Component {
           <Route path = '/stories'
             component={()=> <ChapterNav /> }
             />
+          //these routes are the main ones I would change. Instead of one route per chapter something like
+          //<Route path = '/stories/:story/:chapter' component={StoryChapter} />>
+          //then you can load the story template based off the story name and chapter number which you get from props.match
+      
+          //I would also suggest using redux to put the userInfo into your store so you don't have to pass it around as much
           <Route path = '/stories/fifty-shades-of-pink' component={()=>
               <FiftyChapterHeader storyTitle={this.state.stories[0].title} /> }
             />

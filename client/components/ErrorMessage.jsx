@@ -11,6 +11,7 @@ export default class ErrorMessage extends React.Component {
     if (this.props.error) {
       errorView = (
         <div className ='errpr'>
+        //great error message
           HORROR!!! AN ERROR HAS OCCURED!!! NO!!! {this.props.error.message}
           <div>
             If case of emergency (if you are in desperately need of personalized romance story), please contact web guru cicichen2015@qq.com for asssistance.

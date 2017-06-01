@@ -2,6 +2,8 @@ import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 
+//I think the main challenge to make this awesome is to change these chapters from many components to one
+//how could the template and the variables be stored in a data object and passed to a single component?
 export default class FiftyChapOne extends React.Component{
   constructor(props) {
     super(props)

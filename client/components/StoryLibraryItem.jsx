@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 export default class StoryLibraryItem extends React.Component {
+  //you only need the constructor if you are setting an initial state, if you leave these three lines out it will do exactly the same thing
   constructor(props) {
     super(props)
   }
